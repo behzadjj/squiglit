@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./layout.scss";
+
+div .mat-form-field-appearance-fill .mat-form-field-flex{
+    padding: 0.4em .4em 0 .4em;
+}
+
+table.mat-table {
+    width: 100%;
+    text-align: right;
+}
+
+button:focus {
+    outline: 0 !important;
+    outline: 0 !important;
+}
+
+* {
+    text-align: right;
+}
+
+.mat-dialog-title {
+    border-bottom: 1px solid #f44336;
+    margin-bottom: 30px;
+}
+
+.mat-drawer-content {
+    overflow: initial;
+}
+
+i{
+    &.small {
+        font-size: 15px;
+    }
+
+    &.normal {
+        font-size: 20px;
+    }
+
+    &.large {
+        font-size: 25px;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+.list-header {
+    text-align: center;
+}
+:not(i) {
+    font-family: IRANSansWeb !important;
+}
+
+div .mat-dialog-actions {
+    direction: ltr;
+    justify-content: space-evenly;
+    padding: 25px 0 8px;
+}
+
+div .mat-dialog-content {
+    .dialog-box {
+        padding: 12px 35px;
+    }
+}
+
+div .ltr-input {
+    text-align: left;
+    direction: ltr;
+}
+
+.icon-container{
+    padding: 0;
+    min-width: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

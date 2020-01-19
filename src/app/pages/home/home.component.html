@@ -1,0 +1,73 @@
+<!-- <div [class]="currentTheme"> -->
+
+<mat-toolbar color="primary" class="header" id="header">
+  <span>
+    <a class="brand md-truscribe-theme" ui-sref="home" ng-class="{'arabic-style' : vm.languageDirection=='right'}"
+       href="#/home">
+			<img src="../../../assets/image/squigl_appicon.png" aria-label="Squigl">
+		</a>
+  </span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+
+  <!--<button mat-icon-button routerLink="/">-->
+  <!--<i class="fa fa-home large"></i>-->
+
+
+  <!--</button>-->
+  <span>
+  <div class="profile-container" ng-class="{'arabic-style' : vm.languageDirection=='right'}">
+			<a class="profile-logo md-truscribe-theme active" ng-class="{'arabic-style' : vm.languageDirection=='right'}"
+         ui-sref="account" ui-sref-active="active" href="#/account">
+				<img aria-label="Profile image" src="../../../assets/image/Squigl-app-icons-profile.png"
+             ng-class="{'arabic-style' : vm.languageDirection=='right'}">
+			</a>
+			<div class="profile-logo" ng-class="{'arabic-style' : vm.languageDirection=='right'}">
+				<a aria-label="This is abe@abe.com" class="profile-username ng-binding md-truscribe-theme active"
+           ui-sref="account" ui-sref-active="active" href="#/account">
+					abe@abe.com
+				</a>
+			</div>
+		</div>
+  </span>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="app-container" autosize>
+
+  <mat-sidenav color="accent" opened #drawer position="start" class="app-sidenav" mode="side">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of listPanels" [routerLink]="item.routerLink" color="accent">
+        <div class="icon-container">
+          <i [class]="item.icon + '  large '"></i>
+        </div>
+        <div *ngIf="drawerMoreInfo" class="menu-text">
+          {{item.title}}
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-list-item class="sidenav-footer" (click)="drawerMoreInfo = !drawerMoreInfo">
+        <div class="icon-container">
+          <i [class]="'fa large ' + (drawerMoreInfo ? 'fa-chevron-left' : 'fa-chevron-right')"></i>
+        </div>
+        <div *ngIf="drawerMoreInfo" class="menu-text">
+
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="app-sidenav-content">
+      <mat-toolbar color="primary" class="toolbar">
+        aaa
+      </mat-toolbar>
+      <div id="main-box-container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

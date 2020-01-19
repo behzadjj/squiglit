@@ -1,0 +1,115 @@
+mat-toolbar {
+  .example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+  &.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+}
+
+
+.app-container{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 64px;
+  bottom: 0;
+
+
+  .menu-text{
+    font-size: 13px;
+    margin: 0px 15px;
+  }
+
+  .app-sidenav-content{
+
+
+    #main-box-container{
+      padding: 30px;
+    }
+    height: 40px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  }
+
+  .app-sidenav{
+    background-color: #343a40;
+    div{
+      color: #88aff7;
+      i{
+        color: #dee2e6;
+      }
+    }
+  }
+
+}
+
+.sidenav-footer{
+  position: absolute;
+  bottom: 0;
+}
+
+
+#header{
+
+  .brand {
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    left: -50px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 50px;
+    top: 0;
+
+    &>img {
+      width: auto;
+      height: 40px;
+    }
+  }
+
+  .profile-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .profile-logo>img {
+      width: auto;
+      height: 40px;
+      float: right;
+    }
+
+    div.profile-logo .profile-username {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 20px;
+      color: black;
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    div.profile-logo {
+      display: table;
+    }
+
+    .profile-logo {
+      float: right;
+      width: 70px;
+      height: 50px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+  }
+
+}
