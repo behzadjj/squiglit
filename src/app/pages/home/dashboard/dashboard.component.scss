@@ -1,0 +1,35 @@
+.slider-container{
+    margin: 30px auto 60px;
+
+    .slider-header{
+        margin: 20px auto 20px;
+    }
+}
+
+.create-container{
+    text-align: center;
+    .create-mode {
+        height: 120px;
+        width: 120px;
+        margin: 18px 7px 0px;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        img{
+            position: absolute;
+            top: 20px;
+            right: 25%;
+        }
+    }
+
+    .create-mode span {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        left: 0;
+        font-size: 11px;
+        font-weight: 700;
+        color: #404040;
+        text-transform: capitalize;
+    }
+}

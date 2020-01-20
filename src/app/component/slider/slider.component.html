@@ -6,7 +6,43 @@
   </div>
   <div class="slides" #slides>
     <div *ngFor="let item of items">
-      {{item.number}}
+      <!-- {{item.number}} -->
+      <div class="project-container">
+        <div class="header">
+
+          <img href="" tabindex="0" class="progress-icon ng-scope"
+            ng-if="project.projectStatus==2 &amp;&amp; project.mainVideoThumbnail"
+            src="https://squigl.blob.core.windows.net/prod/TruPort/Organizations/8493/Departments/8493/Projects/26883/Thumbs/Investor Deck_Updated_vS.jpeg?sv=2018-03-28&amp;sr=b&amp;sig=SeNWb6TbHlr%2Fpu7MZiJnHZOHZHGcaWZKadzNBBj4dyY%3D&amp;se=2020-01-20T16%3A00%3A23Z&amp;sp=r">
+          <div class="status-container" [ngSwitch]="item.projectStatus">
+            <i *ngSwitchCase="1" matTooltip="In-progress" class="fa fa-clock"></i>
+            <i *ngSwitchCase="2" matTooltip="Finished" class="fa fa-check"></i>
+          </div>
+
+          <div  class="edit-button-container">
+            <button color="accent" mat-stroked-button><i class="fa fa-edit"></i></button>
+          </div>
+
+
+          <div class="delete-button-container">
+            <button color="warn" mat-stroked-button><i class="fa fa-trash"></i></button>
+          </div>
+
+
+
+          <div class="duration-container">
+            {{item.mainVideoFileDuration}}
+          </div>
+
+        </div>
+
+        <div class="body">
+          <b>{{item.projectName}}</b>
+        </div>
+
+        <div class="footer">
+          <i> created {{item.createDate}}</i>
+        </div>
+      </div>
     </div>
   </div>
   <div class="button-container">

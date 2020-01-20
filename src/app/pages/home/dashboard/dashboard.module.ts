@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import {ComponentModule} from '../../../component/component.module';
 import {DashboardComponent} from './dashboard.component';
+import { MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {DashboardComponent} from './dashboard.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    ComponentModule
+    ComponentModule,
+    MatButtonModule
   ]
 })
 export class DashboardModule { }

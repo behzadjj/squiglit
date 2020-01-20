@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input, OnChanges} from '@angular/core';
+import { Project } from 'src/app/models/project';
 
 
 @Component({
@@ -6,35 +7,45 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit {
-  items = [
-    {number: 1},
-    {number: 2},
-    {number: 3},
-    {number: 4},
-    {number: 5},
-    {number: 6},
-    {number: 7},
-    {number: 8},
-    {number: 9},
-  ];
+export class SliderComponent implements OnInit, OnChanges {
+
+  date = Date.now();
+
+  @Input() data: {
+    results: Array<Project>,
+    videosLimit: any,
+    createdVideos: number,
+    allowToCreateProject: boolean,
+  };
+
+  items: Array<Project> = [];
 
   constructor() {
   }
 
   ngOnInit() {
+    this.initData();
+  }
+
+  ngOnChanges(){
+    this.initData();
+  }
+
+  initData(){
+    console.log(this.data)
+    this.items = this.data.results;
   }
 
   move(element: any, side: 'R' | 'L') {
     if (side === 'R') {
       if ((element.scrollWidth - element.scrollLeft) === element.offsetWidth) {
         console.log('refreshNeed');
-        this.addItems(element);
+        // this.addItems(element);
       } else {
-        element.scroll(350 + element.scrollLeft, 0);
+        element.scroll(300 + element.scrollLeft, 0);
       }
     } else {
-      element.scroll(element.scrollLeft - 350, 0);
+      element.scroll(element.scrollLeft - 300, 0);
     }
 
   }

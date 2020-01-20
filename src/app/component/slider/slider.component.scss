@@ -22,14 +22,14 @@
   */
 }
 .slides::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 3px;
+  height: 3px;
 
 }
 .slides::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  width: 50px;
-  background: red;
+  width: 10px;
+  background: black;
 }
 .slides::-webkit-scrollbar-track {
   background: transparent;
@@ -39,8 +39,8 @@
 .slides > div {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   margin-right: 50px;
   border-radius: 10px;
   background: #eee;
@@ -52,7 +52,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 100px;
 }
 .slides > div:target {
   /*   transform: scale(0.8); */
@@ -102,4 +101,42 @@ img {
 
 .button-container i{
   font-size: 36px;
+}
+
+
+.project-container{
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  img{
+    height: unset;
+    position: inherit;
+  }
+  .header{
+    .edit-button-container{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .delete-button-container{
+      position: absolute;
+      top: 40px;
+      right: 0;
+    }
+  }
+  .body{
+    padding: 15px;
+  }
+  .footer{
+    position: absolute;
+    bottom: 5px;
+    padding: 5px;
+  }
+
+  .status-container{
+    position: absolute;
+    top: 0;
+    font-size: 15px;
+  }
 }

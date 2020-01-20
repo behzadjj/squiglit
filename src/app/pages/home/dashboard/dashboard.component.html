@@ -1,2 +1,41 @@
-<p>dashboard works!</p>
-<app-slider></app-slider>
+<div class="row create-container">
+    <button mat-raised-button class="col-2 create-mode" >
+       <img src="../../../../assets/image/easy mode.png" width="50%" >
+       <span class="ng-binding">Express Mode</span>
+    </button>
+    <button mat-raised-button class="col-2 create-mode">
+        <img src="../../../../assets/image/custom mode.png" width="50%" >
+       <span class="ng-binding">Expert Mode</span>
+    </button>
+    <button  mat-raised-button class="col-2 create-mode">
+        <img src="../../../../assets/image/powerpoint mode.png" width="50%" >
+        <span class="ng-binding"> PowerPoint
+        </span>
+    </button>
+</div>
+
+
+<div class="slider-container">
+    <div class="slider-header">FINALIZED VIDEOS</div>
+    <app-slider [data]="powerPoints"></app-slider>
+</div>
+
+
+<div class="slider-container">
+    <div class="slider-header">DRAFT VIDEOS</div>
+    <app-slider [data]="powerPoints"></app-slider>
+</div>
+
+
+
+<div class="slider-container">
+    <div class="slider-header">PUBLISHED VIDEOS</div>
+    <app-slider [data]="powerPoints"></app-slider>
+</div>
+
+
+
+<div class="slider-container">
+    <div class="slider-header">POWER POINT VIDEOS</div>
+    <app-slider [data]="powerPoints"></app-slider>
+</div>
