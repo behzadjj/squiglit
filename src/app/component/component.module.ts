@@ -7,19 +7,21 @@ import {UploaderComponent} from './uploader/uploader.component';
 import {VoiceRecorderComponent} from './voice-recorder/voice-recorder.component';
 import {ConfirmComponent} from './confirm/confirm.component';
 import {LoaderComponent} from './loader/loader.component';
-import {MatButtonModule, MatCardModule, MatChipsModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
+import { ShareModule } from '../share/share.module';
+import { MatInputModule, MatFormFieldModule } from '@angular/material';
 
 
 @NgModule({
   declarations: [SearchVideoComponent, SliderComponent, CreateInfoComponent, UploaderComponent, VoiceRecorderComponent, ConfirmComponent, LoaderComponent],
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatCardModule,
-    MatChipsModule,
-    MatTooltipModule
+    ShareModule,
   ],
-  exports: [SliderComponent]
+  exports: [
+    SliderComponent,
+    SearchVideoComponent
+
+  ]
 })
 export class ComponentModule {
 }

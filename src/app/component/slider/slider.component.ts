@@ -32,7 +32,6 @@ export class SliderComponent implements OnInit, OnChanges {
   }
 
   initData(){
-    console.log(this.data)
     this.items = this.data.results;
   }
 
@@ -54,12 +53,13 @@ export class SliderComponent implements OnInit, OnChanges {
   }
 
   addItems(element: any) {
-    this.items.push(
-      {number: 10},
-      {number: 11},
-      {number: 12},
-      {number: 13},
-    );
+    // this.items.push(
+    //   {number: 10},
+
+    //   {number: 11},
+    //   {number: 12},
+    //   {number: 13},
+    // );
     setTimeout(
       () => {
         element.scroll((element.offsetWidth / 2) + element.scrollLeft, 0);

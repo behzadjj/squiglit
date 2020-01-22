@@ -12,4 +12,7 @@ export class SearchVideoComponent implements OnInit {
   ngOnInit() {
   }
 
+  search(){
+    console.log('Search')
+  }
 }

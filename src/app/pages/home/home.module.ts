@@ -7,7 +7,7 @@ import {DrawComponent} from './draw/draw.component';
 import {HowtoComponent} from './howto/howto.component';
 import {TeamsComponent} from './teams/teams.component';
 import {UsersComponent} from './users/users.component';
-import {MatButtonModule, MatDividerModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import { ShareModule } from 'src/app/share/share.module';
 
 
 @NgModule({
@@ -21,12 +21,7 @@ import {MatButtonModule, MatDividerModule, MatListModule, MatSidenavModule, MatT
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatDividerModule,
-    MatListModule,
-    MatButtonModule
-
+    ShareModule,
   ]
 })
 export class HomeModule { }

@@ -1,1 +1,9 @@
-<p>search-video works!</p>
+<mat-form-field appearance="legacy" id="search-form-field">
+    <mat-label>Search video by name</mat-label>
+    <input aria-label="Search video by name" (keyup.enter)="search()" matInput placeholder="Name, descriotion, ...">
+
+    <button matSuffix mat-icon-button (click)="search()" aria-label="Search" matTooltip="Search by video name">
+        <i class="fa fa-search large"></i>
+    </button>
+    <mat-hint>Enter ...</mat-hint>
+</mat-form-field>

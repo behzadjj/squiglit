@@ -1,1 +1,85 @@
-<p>draw works!</p>
+<div class="container-fluid">
+
+    <div class="col-12" id="tools-container">
+        <mat-form-field appearance="legacy" id="squiglit-keyword-form-field" >
+            <mat-label>Squiglet Keyword:</mat-label>
+            <input aria-label="Type ypur keyword here" [(ngModel)]="keyword" matInput placeholder="Type ypur keyword here">
+            <mat-hint>Type ypur keyword here</mat-hint>
+        </mat-form-field>
+    </div>
+
+
+
+    <div class="row" id="main-box">
+        <div class="col col-4" id="tools-container">
+            <div class="tool-box" id="keyword">
+                <div class="header">
+                    KEYWORD
+                </div>
+                <div class="content">
+                    {{keyword}}
+                </div>
+            </div>
+            <div class="tool-box" id="mode">
+                <div class="header">
+                    Select Action
+                </div>
+                <div class="content">
+                    <button color="primary" (click)="changeMode('draw')" mat-stroked-button>
+                        <i class="fa fa-pen"></i>
+                        <span>Draw</span>
+                    </button>
+                    <button color="accent" (click)="changeMode('edit')" mat-stroked-button>
+                        <i class="fa fa-edit"></i>
+                        <span>Edit</span>
+                    </button>
+                    <button color="warn" (click)="changeMode('erase')" mat-stroked-button>
+                        <i class="fa fa-eraser"></i>
+                        <span>Erase</span>
+                    </button>
+                </div>
+            </div>
+            <div class="tool-box" id="color-picker">
+                <div class="header">
+                    Choose Color
+                </div>
+                <div class="content">
+                    <div id="ready-color" *ngFor="let color of readyColor" >
+                        <button [style.backgroundColor]="color.value" mat-mini-fab [matTooltip]="color.key" (click)="changeColor(color.value)">
+                            <i class="fa fa-brush large"></i>
+                        </button>
+                    </div>
+
+                    <div id="color-picker-container">
+
+                    </div>
+                </div>
+            </div>
+            <div class="tool-box" id="action">
+                <div class="header">
+                    Action
+                </div>
+                <div class="content">
+
+                    <button color="accent" (click)="undo()" mat-stroked-button>
+                        <i class="fa fa-reply"></i>
+                        <span>Undo</span>
+                    </button>
+                    <button color="accent" (click)="redo()" mat-stroked-button>
+                        <i class="fa fa-share"></i>
+                        <span>Redo</span>
+                    </button>
+                    <button color="warn" (click)="clear()" mat-stroked-button>
+                        <i class="fa fa-trash"></i>
+                        <span>Clear</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-8" id="canvas-container">
+            <canvas id="myCanvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+</div>

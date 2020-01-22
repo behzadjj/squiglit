@@ -1,12 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatToolbarModule, MatDividerModule, MatListModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
+  exports: [
+
+    MatButtonModule,
+    MatCardModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatListModule,
+    MatButtonModule,
+    FormsModule,
   ]
 })
 export class ShareModule { }

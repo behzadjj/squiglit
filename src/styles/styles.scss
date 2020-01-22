@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./layout.scss";
+@import "./../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 
 div .mat-form-field-appearance-fill .mat-form-field-flex{
     padding: 0.4em .4em 0 .4em;
