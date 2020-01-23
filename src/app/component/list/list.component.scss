@@ -1,0 +1,59 @@
+.details-box-header {
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid rgba(0, 128, 0, 0.21);
+  margin-bottom: 10px;
+}
+
+
+
+.details-box-main {
+  margin: 0 auto 35px;
+}
+
+
+.details-box-footer {
+  position: absolute;
+  bottom: 5px;
+  left: 10%;
+  direction: rtl;
+}
+
+
+.mat-form-field {
+  height: 50px;
+}
+
+
+
+#column-box {
+  margin: 20px auto 20px;
+}
+
+#column-box mat-accordion {
+  width: 100%;
+}
+
+.column-box {
+  max-height: 180px;
+  overflow: auto;
+  height: 180px;
+}
+
+.column-box table {
+  width: 100%;
+}
+
+.column-box td {
+  padding: 6px;
+}
+
+table{
+  width: 100%;
+}
+
+div.action button{
+  background-color: rgba(68,78,255,0.34);
+}
+
+

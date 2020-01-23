@@ -1,0 +1,8 @@
+<div class="row">
+    <div *ngFor="let breadcrumb of breadcrumbs">
+        <!-- <button color="primary" mat-flat-button class="breadcrumb-item" > -->
+        <button color="primary" (click)="route(breadcrumb.urls)"  mat-flat-button class="breadcrumb-item" >
+            {{breadcrumb.label}}
+        </button>
+    </div>
+</div>

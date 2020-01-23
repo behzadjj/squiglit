@@ -26,6 +26,9 @@ import { ImageTraceComponent } from './draw/image-trace/image-trace.component';
     HomeRoutingModule,
     ShareModule,
     ColorPickerModule
+  ],
+  entryComponents: [
+    ImageTraceComponent
   ]
 })
 export class HomeModule { }

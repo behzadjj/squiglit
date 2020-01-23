@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { fabric } from 'fabric';
 import { MatDialog } from '@angular/material';
+import { ImageTraceComponent } from './image-trace/image-trace.component';
+import { AccessibleService } from 'src/app/service/accessible/accessible.service';
 
 export enum FabricMode {
   DRAW = 'draw',
@@ -13,11 +15,14 @@ export enum FabricMode {
   templateUrl: './draw.component.html',
   styleUrls: ['./draw.component.scss']
 })
-export class DrawComponent implements OnInit {
+export class DrawComponent implements OnInit, AfterViewInit {
   canvas: any;
-  keyword = ' ';
+  keyword = '';
   currentSelectedColor;
-  constructor(private dialog: MatDialog) {
+  constructor(
+    private dialog: MatDialog,
+    private accessibleService: AccessibleService
+    ) {
 
   }
   isRedoing = false;
@@ -34,10 +39,13 @@ export class DrawComponent implements OnInit {
   historyProcessing;
   historyUndo;
   historyNextState
+  resizeEventListener;
+
 
   ngOnInit() {
 
 
+    this.resizeEventListener = window.addEventListener('resize', this.setCanvasSize, false)
     this.canvas = new fabric.Canvas('myCanvas', {
       // isDrawingMode: true
     });
@@ -45,6 +53,20 @@ export class DrawComponent implements OnInit {
 
     this.canvas.freeDrawingBrush.color = 'red';
     this.canvas.freeDrawingBrush.width = 5
+  }
+
+  ngOnDestroy(){
+    window.removeEventListener('resize', this.setCanvasSize, false)
+  }
+
+  ngAfterViewInit(){
+    this.setCanvasSize();
+  }
+
+  setCanvasSize = () =>{
+    const width = document.getElementById('canvas-container').offsetWidth;
+    this.canvas.setWidth(width - 50);
+    this.canvas.renderAll();
   }
 
   initHistory() {
@@ -103,7 +125,7 @@ export class DrawComponent implements OnInit {
   }
 
   fullScreen() {
-
+    document.getElementById('canvas-container').requestFullscreen();
   }
 
   undo() {
@@ -136,7 +158,15 @@ export class DrawComponent implements OnInit {
 
 
   imageTraceDialog(){
-    // this.dialog()
+    if(this.keyword.length > 0){
+      this.dialog.open(ImageTraceComponent, {
+        data:{
+
+        }
+      })
+    }else{
+      this.accessibleService.showResultMessage('Please enter a keyword')
+    }
   }
 
 
