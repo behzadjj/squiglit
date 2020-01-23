@@ -1,1 +1,28 @@
-<p>image-trace works!</p>
+<div mat-dialog-title cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+  Trace Image
+</div>
+
+
+<div mat-dialog-content>
+
+  <div class="contrainer">
+    <div class="row">
+      <div class="col-6">
+        a
+      </div>
+
+      <div class="col-6">
+        a
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+
+  <button mat-raised-button color="primary" (click)="insert()">Insert</button>
+
+  <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+
+</div>
