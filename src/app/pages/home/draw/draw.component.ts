@@ -136,7 +136,7 @@ export class DrawComponent implements OnInit {
 
 
   imageTraceDialog(){
-
+    // this.dialog()
   }
 
 
