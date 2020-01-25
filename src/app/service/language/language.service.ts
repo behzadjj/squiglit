@@ -24,8 +24,8 @@ export class LanguageService {
     if (this.currentLanguage === LanguageService.DEFAULT_LANGUAGE) {
       return key;
     }
-    const object = data['default']['dictionary'][key] || {};
-    
+    const object = data['default']['dictionary'][key] || [];
+
     const languageIndex = data['default']['languages'][this.currentLanguage];
 
     return object[languageIndex] || 'unset word';
