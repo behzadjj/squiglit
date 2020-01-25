@@ -10,6 +10,7 @@ import {UsersComponent} from './users/users.component';
 import { ShareModule } from 'src/app/share/share.module';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ImageTraceComponent } from './draw/image-trace/image-trace.component';
+import { PipeModule } from 'src/app/pipe/pipe.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ImageTraceComponent } from './draw/image-trace/image-trace.component';
     CommonModule,
     HomeRoutingModule,
     ShareModule,
-    ColorPickerModule
+    ColorPickerModule,
+    PipeModule
   ],
   entryComponents: [
     ImageTraceComponent

@@ -2,20 +2,20 @@
 
     <div class="col-12" id="tools-container">
         <mat-form-field appearance="legacy" id="squiglit-keyword-form-field">
-            <mat-label>Squiglet Keyword:</mat-label>
+        <mat-label>{{'Squiglet Keyword:' | language}}</mat-label>
             <input aria-label="Type ypur keyword here" [(ngModel)]="keyword" matInput
-                placeholder="Type ypur keyword here">
-            <mat-hint>Type ypur keyword here</mat-hint>
+                [placeholder]="'Type ypur keyword here' | language">
+        <mat-hint>{{'Type ypur keyword here' | language}}</mat-hint>
         </mat-form-field>
     </div>
 
 
 
     <div class="row" id="main-box">
-        <div class="col col-4" id="tools-container">
+        <div class="col col-xs-12 col-md-4 col-sm-12" id="tools-container">
             <div class="tool-box" id="keyword">
                 <div class="header">
-                    KEYWORD
+                    {{'KEYWORD' | language}}
                 </div>
                 <div class="content container">
                     <div class="row">
@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="col-6">
-                            <button aria-label="Image Trace" matTooltip="Image Trace" (click)="imageTraceDialog()"
+                            <button aria-label="Image Trace" [matTooltip]="'Image Trace' | language" (click)="imageTraceDialog()"
                                 color="primary" mat-mini-fab>
                                 <i class="fa fa-image"></i>
                             </button>
@@ -34,28 +34,28 @@
             </div>
             <div class="tool-box" id="mode">
                 <div class="header">
-                    Select Action
+                    {{'Select Action' | language}}
                 </div>
                 <div class="content container">
                     <div class="row">
                         <button class="col" color="primary" (click)="changeMode('draw')" mat-stroked-button>
                             <i class="fa fa-pen"></i>
-                            <span>Draw</span>
+                        <span>{{'Draw' | language}}</span>
                         </button>
                         <button class="col" color="accent" (click)="changeMode('edit')" mat-stroked-button>
                             <i class="fa fa-edit"></i>
-                            <span>Edit</span>
+                        <span>{{'Edit' | language}}</span>
                         </button>
                         <button class="col" color="warn" (click)="changeMode('erase')" mat-stroked-button>
                             <i class="fa fa-eraser"></i>
-                            <span>Erase</span>
+                        <span>{{'Erase'| language}}</span>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="tool-box" id="color-picker">
                 <div class="header">
-                    Choose Color
+                    {{'Choose Color' | language}}
                 </div>
                 <div class="content container">
 
@@ -77,29 +77,29 @@
             </div>
             <div class="tool-box" id="action">
                 <div class="header">
-                    Action
+                    {{'Action' | language}}
                 </div>
                 <div class="content container">
 
                     <div class="row">
                         <button class="col" color="accent" (click)="undo()" mat-stroked-button>
                             <i class="fa fa-reply"></i>
-                            <span>Undo</span>
+                        <span>{{'Undo' | language}}</span>
                         </button>
                         <button class="col" color="accent" (click)="redo()" mat-stroked-button>
                             <i class="fa fa-share"></i>
-                            <span>Redo</span>
+                        <span>{{'Redo' | language}}</span>
                         </button>
                         <button class="col" color="warn" (click)="clear()" mat-stroked-button>
                             <i class="fa fa-trash"></i>
-                            <span>Clear</span>
+                        <span>{{'Clear' | language}}</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col col-8" id="canvas-container" (onresize)="setCanvasSize()">
+        <div class="col col-xs-12 col-md-8 col-sm-12" id="canvas-container" (onresize)="setCanvasSize()">
             <canvas id="myCanvas"  height="400"></canvas>
         </div>
     </div>
@@ -107,7 +107,7 @@
 </div>
 
 <div id="tool-btn-container">
-    <button aria-label="Fullscreen" matTooltip="Fullscreen" (click)="fullScreen()" color="accent" mat-icon-button
+    <button aria-label="Fullscreen" [matTooltip]="'Fullscreen' | language" (click)="fullScreen()" color="accent" mat-icon-button
         mat-mini-fab>
         <i class="fa fa-expand"></i>
     </button>

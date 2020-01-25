@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import {ComponentModule} from '../../../component/component.module';
 import {DashboardComponent} from './dashboard.component';
 import { ShareModule } from 'src/app/share/share.module';
+import { PipeModule } from 'src/app/pipe/pipe.module';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { ShareModule } from 'src/app/share/share.module';
     CommonModule,
     DashboardRoutingModule,
     ComponentModule,
-    ShareModule
+    ShareModule,
+    PipeModule
+
   ]
 })
 export class DashboardModule { }

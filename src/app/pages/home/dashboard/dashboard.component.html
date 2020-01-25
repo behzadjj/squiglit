@@ -1,15 +1,15 @@
 <div class=" create-container">
-    <button mat-raised-button class=" create-mode" routerLink="/" aria-label="Create Project" matTooltip="Create Project">
+    <button mat-raised-button class="create-mode" routerLink="/" aria-label="Create Project" [matTooltip]=" 'Create Project' | language">
        <img src="../../../../assets/image/easy mode.png" aria-label="Create Project" width="50%" >
-       <span class="ng-binding" aria-label="Create PowerPoint Project">Express Mode</span>
+    <span class="ng-binding" aria-label="Create PowerPoint Project">{{ 'Express Mode' | language }}</span>
     </button>
-    <button mat-raised-button class="create-mode" aria-label="Create Custom Project" matTooltip="Create Custom Project">
+    <button mat-raised-button class="create-mode" aria-label="Create Custom Project" [matTooltip]="'Create Custom Project' | language">
         <img src="../../../../assets/image/custom mode.png" aria-label="Create Custom Project" width="50%" >
-       <span class="ng-binding" aria-label="Create Custom Project">Expert Mode</span>
+    <span class="ng-binding" aria-label="Create Custom Project">{{ 'Expert Mode' | language}}</span>
     </button>
-    <button  mat-raised-button class=" create-mode" aria-label="Create PowerPoint Project" matTooltip="Create PowerPoint Project">
+    <button  mat-raised-button class=" create-mode" aria-label="Create PowerPoint Project" [matTooltip]="'Create PowerPoint Project' | language">
         <img src="../../../../assets/image/powerpoint mode.png" width="50%" aria-label="Create PowerPoint Project">
-        <span class="ng-binding" aria-label="Create Project"> PowerPoint
+        <span class="ng-binding" aria-label="Create Project"> {{ 'Power Point' | language}}
         </span>
     </button>
 </div>
@@ -19,26 +19,28 @@
 </div>
 
 <div class="slider-container">
-    <div class="slider-header">FINALIZED VIDEOS</div>
+<div class="slider-header">{{ 'FINALIZED VIDEOS' | language}}</div>
     <app-slider [data]="powerPoints"></app-slider>
 </div>
 
 
 <div class="slider-container">
-    <div class="slider-header">DRAFT VIDEOS</div>
-    <app-slider [data]="powerPoints"></app-slider>
-</div>
-
-
-
-<div class="slider-container">
-    <div class="slider-header">PUBLISHED VIDEOS</div>
+<div class="slider-header">{{'DRAFT VIDEOS' | language}}</div>
     <app-slider [data]="powerPoints"></app-slider>
 </div>
 
 
 
 <div class="slider-container">
-    <div class="slider-header">POWER POINT VIDEOS</div>
+<div class="slider-header">{{'PUBLISHED VIDEOS' | language}}</div>
     <app-slider [data]="powerPoints"></app-slider>
 </div>
+
+
+
+<div class="slider-container">
+<div class="slider-header">{{'POWER POINT VIDEOS' | language}}</div>
+    <app-slider [data]="powerPoints"></app-slider>
+</div>
+
+<button (click)="changeLang()">change language</button>

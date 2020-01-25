@@ -1,0 +1,85 @@
+{
+    "mainLanguage": "eng",
+
+    "languages":{
+        "ar": 0
+    },
+
+    "dictionary":{
+        "Express Mode": [
+            "الکباب"
+        ],
+        "Expert Mode" :[
+            ""
+        ],
+        "Power Point":[
+            ""
+        ],
+        "Create Project": [
+            ""
+        ],
+        "Create PowerPoint Project": [
+            ""
+        ],
+        "Create Custom Project":[
+            ""
+        ],
+        "Previous": [
+            ""
+        ],
+        "Next":[
+            ""
+        ],
+        "FINALIZED VIDEOS":[
+            ""
+        ],
+        "DRAFT VIDEOS":[
+            ""
+        ],
+        "PUBLISHED VIDEOS":[
+            ""
+        ],
+        "Created":[
+            ""
+        ],
+        "In-progress":[
+            ""
+        ],
+        "Finished":[
+            ""
+        ],
+        "Enter":[
+            ""
+        ],
+        "Search video by name":[
+            ""
+        ],
+        "Squiglet Keyword:":[
+            ""
+        ],
+        "Type ypur keyword here":[
+            ""
+        ],
+        "Fullscreen":[
+            ""
+        ],
+        "Clear":[
+            ""
+        ],
+        "Undo":[
+            ""
+        ],
+        "Redo": [
+            ""
+        ],
+        "Erase":[
+            ""
+        ],
+        "Select Action":[
+            ""
+        ],
+        "KEYWORD":[
+            ""
+        ]
+    }
+}

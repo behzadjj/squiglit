@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService, AppLanguages } from 'src/app/service/language/language.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -217,9 +218,12 @@ export class DashboardComponent implements OnInit {
     }
   
 
-  constructor() { }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit() {
   }
 
+  changeLang(){
+    this.languageService.changeLanguage(AppLanguages.ARABIC);
+  }
 }

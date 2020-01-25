@@ -11,6 +11,7 @@ import { MatInputModule, MatFormFieldModule } from '@angular/material';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ListComponent } from './list/list.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { PipeModule } from '../pipe/pipe.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
   imports: [
     CommonModule,
     ShareModule,
+    PipeModule
   ],
   exports: [
     SliderComponent,

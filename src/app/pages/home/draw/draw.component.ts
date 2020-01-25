@@ -50,7 +50,6 @@ export class DrawComponent implements OnInit, AfterViewInit {
       // isDrawingMode: true
     });
     this.initHistory();
-
     this.canvas.freeDrawingBrush.color = 'red';
     this.canvas.freeDrawingBrush.width = 5
   }
