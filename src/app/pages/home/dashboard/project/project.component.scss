@@ -1,0 +1,63 @@
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .create-container{
+    text-align: center;
+    .create-mode {
+        height: 120px;
+        width: 120px;
+        margin: 18px 7px 0px;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        img{
+            position: absolute;
+            top: 20px;
+            right: 25%;
+        }
+
+        &#lock-btn{
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            background-color: #40404000;
+            border: 0;
+            box-shadow: unset;
+        }
+    }
+
+    .create-mode span {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        left: 0;
+        font-size: 11px;
+        font-weight: 700;
+        color: #404040;
+        text-transform: capitalize;
+    }
+
+    #unlock-btn{
+
+    }
+}
+
+#navigation-btn-container{
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+}
+
+#script-container{
+    margin: 10px auto 0px;
+    padding: 5px 0;
+    border: 1px solid #dee2e6;
+}

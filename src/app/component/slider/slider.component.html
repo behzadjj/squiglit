@@ -1,6 +1,7 @@
 <div class="slider">
   <div class="button-container">
-    <button mat-icon-button (click)="move(slides, 'L')" [matTooltip]="'Previous' | language" aria-label="Previous">
+    <button mat-icon-button (click)="move(slides, 'L')" [matTooltip]="'Previous' | language"
+     aria-label="Previous">
       <i class="fa fa-chevron-left"></i>
     </button>
   </div>
@@ -19,12 +20,16 @@
           </div>
 
           <div  class="edit-button-container">
-            <button color="accent" mat-stroked-button><i class="fa fa-edit"></i></button>
+            <button color="accent" mat-stroked-button [matTooltip]="'Edit' | language">
+              <i class="fa fa-edit"></i>
+            </button>
           </div>
 
 
           <div class="delete-button-container">
-            <button color="warn" mat-stroked-button><i class="fa fa-trash"></i></button>
+            <button color="warn" mat-stroked-button [matTooltip]="'Delete' | language">
+              <i class="fa fa-trash"></i>
+            </button>
           </div>
 
 
@@ -46,7 +51,8 @@
     </div>
   </div>
   <div class="button-container">
-    <button mat-icon-button (click)="move(slides, 'R')" [matTooltip]=" 'Next' | language" aria-label="Next">
+    <button mat-icon-button (click)="move(slides, 'R')" [matTooltip]=" 'Next' | language" 
+    aria-label="Next">
       <i class="fa fa-chevron-right"></i>
     </button>
   </div>

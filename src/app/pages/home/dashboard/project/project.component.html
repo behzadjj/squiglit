@@ -1,0 +1,92 @@
+<div class="container-fluid">
+
+    <form class="example-forms" [formGroup]="form">
+        <div class="row">
+            <div class="col col-lg-6  col-sm-12" id="form-container">
+                <h5 class="header">
+                    {{'Project Info' | language}}
+                </h5>
+                <mat-form-field class="example-full-width">
+                    <input [appDisableControl]="projectInfoLock" matInput formControlName="name" [placeholder]="'Project Name' | language">
+                    <mat-error *ngIf="form.get('script').hasError('required')">
+                        {{'Project must have a name' | language}}
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input [appDisableControl]="projectInfoLock" matInput formControlName="category" [placeholder]="'Category' | language">
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div class="row" id="script-container">
+            <div [class]="projectInfoLock ? 'col col-lg-6  col-sm-12': 'col col-lg-12  col-sm-12'">
+                <mat-form-field class="example-full-width">
+                    <textarea [appDisableControl]="projectInfoLock" rows="10" matInput formControlName="script"
+                        [placeholder]="'script' | language"></textarea>
+                    <mat-hint *ngIf="!projectInfoLock">
+                        {{'Type/insert or click the microphone to speak your story' | language}}
+                    </mat-hint>
+                    <mat-error *ngIf="form.get('script').hasError('minlength')">
+                        {{'Script length must be at least 150 characters.' | language}}
+                    </mat-error>
+                    <mat-error *ngIf="form.get('script').hasError('required')">
+                        {{'You must enter a script with at least 150 character' | language}}
+                    </mat-error>
+                </mat-form-field>
+                <button  *ngIf="!projectInfoLock" color="accent" [matTooltip]="'SPEAK OUT YOUR SCRIPT' | language"
+                    aria-label="SPEAK OUT YOUR SCRIPT" mat-stroked-button>
+                    <i class="fa fa-microphone"></i>
+                    <span>{{'SPEAK OUT YOUR SCRIPT' | language}}</span>
+                </button>
+
+                <div class="create-container" *ngIf="projectInfoLock">
+                    <button (click)="projectInfoLock = false" mat-raised-button class="create-mode" id="lock-btn"
+                        aria-label="lock script" [matTooltip]=" 'lock script' | language">
+                        <img src="../../../../../assets/image/lock-image.png" aria-label="lock script" width="50%">
+                        <span class="ng-binding" aria-label="lock script"></span>
+                    </button>
+                </div>
+            </div>
+
+
+
+            <div class="col col-lg-6 c col-sm-12" *ngIf="projectInfoLock">
+
+                <h5 class="header">
+                    {{'VOICE OVER OPTIONS' | language}}
+                </h5>
+
+                <div class="create-container">
+                    <p>
+                        <mat-hint>{{'Select Audio' | language}}</mat-hint>
+                    </p>
+                    <button mat-raised-button class="create-mode" aria-label="Machine Voice" [matTooltip]=" 'Machine Voice' | language">
+                        <img src="../../../../../assets/image/machine-voice-icon.png" aria-label="Machine Voice" width="50%">
+                        <span class="ng-binding" aria-label="Machine Voice">{{ 'Machine Voice' | language }}</span>
+                    </button>
+                    <button mat-raised-button class="create-mode" aria-label="Record" [matTooltip]="'Record' | language">
+                        <img src="../../../../../assets/image/record-voice-icon.png" aria-label="Record" width="50%">
+                        <span class="ng-binding" aria-label="Record">{{ 'Record' | language}}</span>
+                    </button>
+                    <button mat-raised-button class="create-mode" aria-label="Upload Audio" [matTooltip]="'Upload Audio' | language">
+                        <img src="../../../../../assets/image/upload-voice-icon.png" width="50%" aria-label="Upload Audio">
+                        <span class="ng-binding" aria-label="Upload Audio"> {{ 'Upload Audio' | language}}
+                        </span>
+                    </button>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div id="navigation-btn-container">
+            <button mat-raised-button color="primary" (click)="next()" aria-label="Next" [matTooltip]="'Click for next step' | language">
+                {{'Next' | language}}
+            </button>
+        </div>
+
+    </form>
+</div>

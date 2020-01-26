@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {LoginComponent} from './pages/login/login.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { PowerpointComponent } from './powerpoint/powerpoint.component';
 import { MatDialogModule } from '@angular/material';
 import { ShareModule } from './share/share.module';
 
@@ -13,7 +12,6 @@ import { ShareModule } from './share/share.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    PowerpointComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,21 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule, MatChipsModule, MatTooltipModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatToolbarModule, MatDividerModule, MatListModule, MatDialogModule, MatTableModule, MatSnackBarModule } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatChipsModule,
+  MatTooltipModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatDividerModule,
+  MatListModule,
+  MatDialogModule,
+  MatTableModule,
+  MatSnackBarModule,
+  MatSelectModule
+} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
@@ -24,7 +39,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatDialogModule,
     MatTableModule,
     MatSnackBarModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ]
 })
 export class ShareModule { }

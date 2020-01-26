@@ -11,6 +11,9 @@ import { LanguagePipe } from './language/language.pipe';
   ],
   exports: [
     LanguagePipe
+  ],
+  providers: [
+    LanguagePipe
   ]
 })
 export class PipeModule { }

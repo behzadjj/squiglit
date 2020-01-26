@@ -7,7 +7,6 @@ import { UploaderComponent } from './uploader/uploader.component';
 import { VoiceRecorderComponent } from './voice-recorder/voice-recorder.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ShareModule } from '../share/share.module';
-import { MatInputModule, MatFormFieldModule } from '@angular/material';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ListComponent } from './list/list.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
@@ -16,11 +15,16 @@ import { PipeModule } from '../pipe/pipe.module';
 
 @NgModule({
   declarations: [
-    SearchVideoComponent, 
-    SliderComponent, CreateInfoComponent, UploaderComponent, VoiceRecorderComponent, LoaderComponent,
+    SearchVideoComponent,
+    SliderComponent,
+    CreateInfoComponent,
+    UploaderComponent,
+    VoiceRecorderComponent,
+    LoaderComponent,
     BreadcrumbComponent,
     ConfirmDialogComponent,
-    ListComponent],
+    ListComponent,
+  ],
   imports: [
     CommonModule,
     ShareModule,
@@ -28,8 +32,8 @@ import { PipeModule } from '../pipe/pipe.module';
   ],
   exports: [
     SliderComponent,
-    SearchVideoComponent
-
+    SearchVideoComponent,
+    UploaderComponent
   ]
 })
 export class ComponentModule {
