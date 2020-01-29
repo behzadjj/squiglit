@@ -6,6 +6,7 @@ import { ProjectComponent } from './project/project.component';
 import { VoiceSelectComponent } from './project/voice-select/voice-select.component';
 import { VoiceOptionsComponent } from './project/voice-options/voice-options.component';
 import { ProjectFinalizeComponent } from './project-finalize/project-finalize.component';
+import { TimeLineComponent } from './time-line/time-line.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'project-finalize',
     component: ProjectFinalizeComponent
+  },
+  {
+    path: 'time-line',
+    component: TimeLineComponent
   }
 ];
 
