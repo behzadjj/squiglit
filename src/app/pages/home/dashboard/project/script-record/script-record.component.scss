@@ -1,0 +1,20 @@
+#recorder-hint{
+    color: #4040407d;
+    padding: 10px 10px 10px 30px;
+    border: 2px solid #eae8e8;
+    border-radius: 10px;
+    font-size: 17px;
+    margin-top: 20px;
+}
+
+.create-container{
+    text-align: center;
+    .create-mode {
+        height: 190px;
+        width: 190px;
+        margin: 18px 7px 0px;
+        position: relative;
+        display: inline-block;
+        box-shadow: none;
+    }
+  }

@@ -9,7 +9,24 @@
     width: 100%;
   }
 
-  .create-container{
+
+#navigation-btn-container{
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+}
+
+#script-container{
+    margin: 15px auto 0px;
+    padding: 10px 0;
+    border: 1px solid #dee2e6;
+
+    .speaker-btn-container{
+        padding: 20px 0;
+    }
+}
+
+.create-container{
     text-align: center;
     .create-mode {
         height: 120px;
@@ -26,7 +43,7 @@
 
         &#lock-btn{
             position: absolute;
-            bottom: -40px;
+            bottom: 0;
             right: -40px;
             background-color: #40404000;
             border: 0;
@@ -44,20 +61,4 @@
         color: #404040;
         text-transform: capitalize;
     }
-
-    #unlock-btn{
-
-    }
-}
-
-#navigation-btn-container{
-    position: fixed;
-    bottom: 2vw;
-    right: 2vw;
-}
-
-#script-container{
-    margin: 10px auto 0px;
-    padding: 5px 0;
-    border: 1px solid #dee2e6;
 }

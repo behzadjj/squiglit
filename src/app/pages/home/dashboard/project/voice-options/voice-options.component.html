@@ -1,0 +1,23 @@
+<h5 class="header">
+    {{'VOICE OVER OPTIONS' | language}}
+</h5>
+
+<div class="create-container">
+    <p>
+        <mat-hint>{{'Select Audio' | language}}</mat-hint>
+    </p>
+    <button mat-raised-button class="create-mode" routerLink="./voice/machine-voice" aria-label="Machine Voice" [matTooltip]=" 'Machine Voice' | language">
+        <img src="../../../../../assets/image/machine-voice-icon.png" aria-label="Machine Voice" width="50%">
+        <span class="ng-binding" aria-label="Machine Voice">{{ 'Machine Voice' | language }}</span>
+    </button>
+    <button mat-raised-button class="create-mode" routerLink="./voice/record" aria-label="Record" [matTooltip]="'Record' | language">
+        <img src="../../../../../assets/image/record-voice-icon.png" aria-label="Record" width="50%">
+        <span class="ng-binding" aria-label="Record">{{ 'Record' | language}}</span>
+    </button>
+    <button mat-raised-button class="create-mode" routerLink="./voice/upload" aria-label="Upload Audio" [matTooltip]="'Upload Audio' | language">
+        <img src="../../../../../assets/image/upload-voice-icon.png" width="50%" aria-label="Upload Audio">
+        <span class="ng-binding" aria-label="Upload Audio"> {{ 'Upload Audio' | language}}
+        </span>
+    </button>
+
+</div>

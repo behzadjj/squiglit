@@ -6,12 +6,25 @@
 :not(i){
   font-family: 'Lato', sans-serif;
 }
-.mat-dialog-actions{
-  justify-content: space-evenly;
-}
 
 .full-width{
   width: 100%;
+}
+
+div .mat-dialog-actions {
+  justify-content: space-evenly;
+  padding: 25px 0 8px;
+}
+
+div .mat-dialog-content {
+  .dialog-box {
+      padding: 12px 35px;
+  }
+}
+
+.mat-dialog-title {
+  border-bottom: 1px solid #f44336;
+  margin-bottom: 30px;
 }
 
 

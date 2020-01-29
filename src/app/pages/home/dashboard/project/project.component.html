@@ -8,7 +8,7 @@
                 </h5>
                 <mat-form-field class="example-full-width">
                     <input [appDisableControl]="projectInfoLock" matInput formControlName="name" [placeholder]="'Project Name' | language">
-                    <mat-error *ngIf="form.get('script').hasError('required')">
+                    <mat-error *ngIf="form.get('name').hasError('required')">
                         {{'Project must have a name' | language}}
                     </mat-error>
                 </mat-form-field>
@@ -22,8 +22,9 @@
         <div class="row" id="script-container">
             <div [class]="projectInfoLock ? 'col col-lg-6  col-sm-12': 'col col-lg-12  col-sm-12'">
                 <mat-form-field class="example-full-width">
-                    <textarea [appDisableControl]="projectInfoLock" rows="10" matInput formControlName="script"
-                        [placeholder]="'script' | language"></textarea>
+                    <mat-label>{{'Script' | language}}</mat-label>
+                    <textarea (onDrop)="dropText($event)" [appDisableControl]="projectInfoLock" rows="10" matInput
+                        formControlName="script" [placeholder]="'Type or paste or drag drop your story here...' | language"></textarea>
                     <mat-hint *ngIf="!projectInfoLock">
                         {{'Type/insert or click the microphone to speak your story' | language}}
                     </mat-hint>
@@ -34,11 +35,14 @@
                         {{'You must enter a script with at least 150 character' | language}}
                     </mat-error>
                 </mat-form-field>
-                <button  *ngIf="!projectInfoLock" color="accent" [matTooltip]="'SPEAK OUT YOUR SCRIPT' | language"
-                    aria-label="SPEAK OUT YOUR SCRIPT" mat-stroked-button>
-                    <i class="fa fa-microphone"></i>
-                    <span>{{'SPEAK OUT YOUR SCRIPT' | language}}</span>
-                </button>
+
+                <div class="speaker-btn-container">
+                    <button *ngIf="!projectInfoLock" (click)="recorderDialog()" color="accent" [matTooltip]="'SPEAK OUT YOUR SCRIPT' | language"
+                        aria-label="SPEAK OUT YOUR SCRIPT" mat-stroked-button>
+                        <i class="fa fa-microphone"></i>
+                        <span>{{'SPEAK OUT YOUR SCRIPT' | language}}</span>
+                    </button>
+                </div>
 
                 <div class="create-container" *ngIf="projectInfoLock">
                     <button (click)="projectInfoLock = false" mat-raised-button class="create-mode" id="lock-btn"
@@ -52,30 +56,7 @@
 
 
             <div class="col col-lg-6 c col-sm-12" *ngIf="projectInfoLock">
-
-                <h5 class="header">
-                    {{'VOICE OVER OPTIONS' | language}}
-                </h5>
-
-                <div class="create-container">
-                    <p>
-                        <mat-hint>{{'Select Audio' | language}}</mat-hint>
-                    </p>
-                    <button mat-raised-button class="create-mode" aria-label="Machine Voice" [matTooltip]=" 'Machine Voice' | language">
-                        <img src="../../../../../assets/image/machine-voice-icon.png" aria-label="Machine Voice" width="50%">
-                        <span class="ng-binding" aria-label="Machine Voice">{{ 'Machine Voice' | language }}</span>
-                    </button>
-                    <button mat-raised-button class="create-mode" aria-label="Record" [matTooltip]="'Record' | language">
-                        <img src="../../../../../assets/image/record-voice-icon.png" aria-label="Record" width="50%">
-                        <span class="ng-binding" aria-label="Record">{{ 'Record' | language}}</span>
-                    </button>
-                    <button mat-raised-button class="create-mode" aria-label="Upload Audio" [matTooltip]="'Upload Audio' | language">
-                        <img src="../../../../../assets/image/upload-voice-icon.png" width="50%" aria-label="Upload Audio">
-                        <span class="ng-binding" aria-label="Upload Audio"> {{ 'Upload Audio' | language}}
-                        </span>
-                    </button>
-
-                </div>
+                <router-outlet></router-outlet>
             </div>
 
 

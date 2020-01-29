@@ -2,6 +2,10 @@ import { Component, OnInit, Directive, Input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { AccessibleService } from 'src/app/service/accessible/accessible.service';
 import { LanguagePipe } from 'src/app/pipe/language/language.pipe';
+import { MatDialog } from '@angular/material';
+import { ScriptRecordComponent } from './script-record/script-record.component';
+import { BreakpointState, BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
 
 export interface ProjectInfo {
   name: string;
@@ -19,21 +23,19 @@ export class ProjectComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private accessibleService: AccessibleService,
-    private language: LanguagePipe
+    private language: LanguagePipe,
+    private dialog: MatDialog,
+    private breakpointObserver: BreakpointObserver
   ) { }
 
   projectInfo: ProjectInfo = {} as ProjectInfo;
 
+  isExtraSmall: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.XSmall);
   projectInfoLock = false;
 
   form;
 
   ngOnInit() {
-
-    // const form = new FormGroup({
-    //   first: new FormControl('first name'),
-    //   last: new FormControl('last name')
-    // });
     this.form = this.fb.group({
       name: [{ value: this.projectInfo.name, disabled: false }, Validators.required],
       script: [this.projectInfo.script, [Validators.required, Validators.minLength(150)]],
@@ -55,6 +57,39 @@ export class ProjectComponent implements OnInit {
           .showResultMessage(this.language.transform('Please enter valid values in project info Form'))
       }
     }
+
+  }
+
+  recorderDialog() {
+    const dialogRef = this.dialog.open(ScriptRecordComponent, {
+      width: '50%',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+    });
+
+    const smallDialogSubscription = this.isExtraSmall.subscribe(size => {
+      if (size.matches) {
+        dialogRef.updateSize('100%', '100%');
+      } else {
+        dialogRef.updateSize('50%');
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(
+      (result) => {
+        smallDialogSubscription.unsubscribe();
+        if (result && result.status === 'success') {
+
+        } else {
+
+        }
+      }
+    );
+  }
+
+  dropText(evt) {
+    var data = evt.dataTransfer.getData("Text");
+    console.log(data);
 
   }
 

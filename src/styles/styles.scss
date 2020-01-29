@@ -20,15 +20,6 @@ button:focus {
     text-align: right;
 }
 
-.mat-dialog-title {
-    border-bottom: 1px solid #f44336;
-    margin-bottom: 30px;
-}
-
-.mat-drawer-content {
-    overflow: initial;
-}
-
 i{
     &.small {
         font-size: 15px;
@@ -49,21 +40,6 @@ i{
 
 .list-header {
     text-align: center;
-}
-:not(i) {
-    font-family: IRANSansWeb !important;
-}
-
-div .mat-dialog-actions {
-    direction: ltr;
-    justify-content: space-evenly;
-    padding: 25px 0 8px;
-}
-
-div .mat-dialog-content {
-    .dialog-box {
-        padding: 12px 35px;
-    }
 }
 
 div .ltr-input {
@@ -103,3 +79,6 @@ div .ltr-input {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+
+  

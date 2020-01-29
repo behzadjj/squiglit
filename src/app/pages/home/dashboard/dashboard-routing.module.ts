@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
-import { ExpertComponent } from './expert/expert.component';
-import { ExpressComponent } from './express/express.component';
 import { PowerpointComponent } from './powerpoint/powerpoint.component';
 import { ProjectComponent } from './project/project.component';
+import { VoiceSelectComponent } from './project/voice-select/voice-select.component';
+import { VoiceOptionsComponent } from './project/voice-options/voice-options.component';
 
 
 const routes: Routes = [
@@ -13,20 +13,16 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'expert',
-    component: ExpertComponent
-  },
-  {
-    path: 'express',
-    component: ExpressComponent
-  },
-  {
     path: 'powerpoint',
     component: PowerpointComponent
   },
   {
     path: 'project/:level',
-    component: ProjectComponent
+    component: ProjectComponent,
+    children:[
+      {path: '', component: VoiceOptionsComponent},
+      {path: 'voice/:selected', component: VoiceSelectComponent},
+    ]
   }
 ];
 
