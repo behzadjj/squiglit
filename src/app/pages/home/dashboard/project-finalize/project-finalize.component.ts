@@ -7,7 +7,7 @@ import { timeout } from 'q';
   styleUrls: ['./project-finalize.component.scss']
 })
 export class ProjectFinalizeComponent implements OnInit {
-  activeAlert = false;
+  activeAlert = '';
   finaliaze = [
     {
       key: 'word',
@@ -52,9 +52,9 @@ export class ProjectFinalizeComponent implements OnInit {
         if (this.finaliaze[2].value) {
           this.finaliaze[0].value = true;
           this.finaliaze[1].value = false;
-          this.activeAlert = true;
+          this.activeAlert = 'If you select Image Squigl will select keyword for you.';
         } else {
-          this.activeAlert = false;
+          this.activeAlert = '';
         }
       }, 0
     )
