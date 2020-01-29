@@ -1,0 +1,36 @@
+<div class="contaianer">
+    <div *ngFor="let item of finaliaze; let i = index;" class="project-option row ">
+        <div class="col image-container">
+            <img [src]="item.image" width="30%">
+        </div>
+        <button mat-stroked-button [attr.aria-label]="item.options[0].key" [matTooltip]="item.options[0].key" (click)="changeState(item ,false)"
+            class="col col-md-4 col-lg-4 col-sm-4 col-xs-12">
+            {{item.options[0].key | language}}
+        </button>
+
+        <div class="col col-md-1 col-lg-1 col-sm-4 col-xs-12 slide-container">
+            <mat-slide-toggle (change)="changeState(item , !item.value)" [checked]="item.value"></mat-slide-toggle>
+        </div>
+
+        <button mat-stroked-button [attr.aria-label]="item.options[1].key" [matTooltip]="item.options[1].key" (click)="changeState(item, true);"
+            class="col col-md-4 col-lg-4 col-sm-4 col-xs-12">
+            {{item.options[1].key | language}}
+        </button>
+
+        <div class="full-width " style="text-align: right">
+            <mat-error *ngIf="(i == 0 || i == 1) && activeAlert">
+                {{'If you select Image Squigl will select keyword for you.' | language}}
+            </mat-error>
+        </div>
+    </div>
+
+
+    <div id="navigation-btn-container">
+        <button mat-raised-button color="primary" (click)="next()" aria-label="Back to Script" [matTooltip]="'Back to Script' | language">
+            {{'Back to Script' | language}}
+        </button>
+        <button mat-raised-button color="primary" (click)="next()" aria-label="Next" [matTooltip]="'Click for next step' | language">
+            {{'Next' | language}}
+        </button>
+    </div>
+</div>

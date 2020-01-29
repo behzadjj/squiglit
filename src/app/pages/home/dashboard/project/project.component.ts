@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material';
 import { ScriptRecordComponent } from './script-record/script-record.component';
 import { BreakpointState, BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 export interface ProjectInfo {
   name: string;
@@ -25,7 +26,8 @@ export class ProjectComponent implements OnInit {
     private accessibleService: AccessibleService,
     private language: LanguagePipe,
     private dialog: MatDialog,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private router: Router
   ) { }
 
   projectInfo: ProjectInfo = {} as ProjectInfo;
@@ -48,7 +50,7 @@ export class ProjectComponent implements OnInit {
   next() {
 
     if (this.projectInfoLock) {
-
+      this.router.navigateByUrl('/project-finalize');
     } else {
       if (this.form.valid) {
         this.projectInfoLock = true;

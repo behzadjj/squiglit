@@ -12,11 +12,12 @@ import { DirectiveModule } from 'src/app/directive/directive.module';
 import { ScriptRecordComponent } from './project/script-record/script-record.component';
 import { VoiceSelectComponent } from './project/voice-select/voice-select.component';
 import { VoiceOptionsComponent } from './project/voice-options/voice-options.component';
+import { ProjectFinalizeComponent } from './project-finalize/project-finalize.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent, PowerpointComponent, ProjectComponent, ScriptRecordComponent, VoiceSelectComponent, VoiceOptionsComponent],
+    DashboardComponent, PowerpointComponent, ProjectComponent, ScriptRecordComponent, VoiceSelectComponent, VoiceOptionsComponent, ProjectFinalizeComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

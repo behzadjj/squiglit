@@ -13,7 +13,8 @@ import {
   MatDialogModule,
   MatTableModule,
   MatSnackBarModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSlideToggleModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -42,7 +43,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DragDropModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule
   ]
 })
 export class ShareModule { }

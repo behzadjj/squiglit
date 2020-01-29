@@ -5,6 +5,7 @@ import { PowerpointComponent } from './powerpoint/powerpoint.component';
 import { ProjectComponent } from './project/project.component';
 import { VoiceSelectComponent } from './project/voice-select/voice-select.component';
 import { VoiceOptionsComponent } from './project/voice-options/voice-options.component';
+import { ProjectFinalizeComponent } from './project-finalize/project-finalize.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
       {path: '', component: VoiceOptionsComponent},
       {path: 'voice/:selected', component: VoiceSelectComponent},
     ]
+  },
+  {
+    path: 'project-finalize',
+    component: ProjectFinalizeComponent
   }
 ];
 
