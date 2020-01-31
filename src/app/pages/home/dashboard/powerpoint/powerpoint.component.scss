@@ -1,0 +1,78 @@
+.file-box {
+    padding: 20px;
+}
+
+.file-box div {
+
+    text-align: center;
+}
+
+.main-container{
+    .helper-container{
+        text-align: left;
+        a:hover{
+           text-decoration: none; 
+        }
+    }
+
+    .uploadfilecontainer {
+        text-align: center;
+        margin: 20px auto;
+        border: 1px dashed #414143;
+        border-radius: 10px;
+        color:  #414143;
+        padding: 20px;
+        .upload-image-container{
+            
+        }
+        .drag-drop-hint{
+            font-weight: 700;
+        }
+        .drag-drop-hint, .upload-btn-container, p{
+            margin: 10px auto;
+        }
+    }
+}
+
+
+// .uploadfilecontainer:hover {
+//     cursor: pointer;
+//     background-color: #9ecbec !important;
+//     opacity: 0.8;
+// }
+
+.files-list {
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px auto;
+    border: 1px dashed;
+    border-radius: 12px;
+    color: #1c8adb;
+    padding: 10px;
+}
+
+.files-list .delete-file img {
+    width: 30px;
+}
+
+.success-upload {
+    color: #28a745;
+}
+
+.un-success-upload {
+    color: #f44336;
+}
+
+.message-box {
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    color: #f44336;
+}
+
+
+h6{
+    font-size: 1rem;
+    line-height: 110%;
+    margin: .5rem 0 .4rem 0;
+}

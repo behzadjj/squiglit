@@ -1,1 +1,68 @@
-<app-uploader></app-uploader>
+<div class="main-container container">
+    <div class="row">
+        <div class="uploadfilecontainer col-12" [attr.aria-label]="'Drag and drop your file here to upload' | language"
+            appDragDrop (onFileDropped)="onFileSelected($event)">
+            <div class="upload-image-container">
+                <img src="../../../../../assets/image/powerpoint-upload.png" width="30%">
+            </div>
+            <div class="drag-drop-hint">{{'Drag and drop your file here to upload' | language}}</div>
+            <div class="upload-btn-container">
+                <button [attr.aria-label]="'or select your file to upload' | language" (click)="fileInput.click()"
+                    mat-stroked-button>
+                    {{'or select your file to upload' | language}}
+                </button>
+            </div>
+            <p>
+                <mat-hint [attr.aria-label]="'For best video resolution, please use widescreen as the size for your PPTX slides.' | language">
+                    {{'For best video resolution, please use widescreen as the size for your PPTX slides.' | language}}
+                </mat-hint>
+            </p>
+            <input hidden type="file" #fileInput (change)="onFileSelected($event.target.files)">
+
+
+            <div class="files-list" *ngFor="let file of files;let i=index">
+                <div class="row">
+                    <div class="col-2">
+                        <button mat-icon-button (click)="deleteAttachment(i)">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="col-10">
+                        {{file.name}}
+                        <button *ngIf="file.ready" matTooltip="آپلود موفق" class="success-upload" mat-icon-button><i
+                                class="fa fa-check"></i></button>
+                        <button *ngIf="file.ready == false" matTooltip="خطا در آپلود!" class="un-success-upload"
+                            mat-icon-button (click)="upload(file)"><i class="fal fa-repeat"></i></button>
+                    </div>
+                </div>
+                <mat-progress-bar color="warn" [value]="file.progress"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+
+    <div class="helper-container row">
+        <div class="col-12">
+            <h6>
+                {{'Do you want to upload' | language}}
+                <a [attr.aria-label]="'Do you want to upload Apple Keynote slide?' | language" href="https://squiglit.com/convert-apple-keynote-to-powerpoint/"
+                    target="_blank" class="md-truscribe-theme">
+                    {{'Apple Keynote slides' | language}}
+                </a>?
+            </h6>
+
+            <h6>
+                {{'Do you want to upload' | language}}
+                <a [attr.aria-label]="'Do you want to upload Google slides?' | language" href="https://squiglit.com/convert-google-slides-to-powerpoint/"
+                    target="_blank" class="md-truscribe-theme">
+                    {{'Google slides' | language}}
+                </a>?
+            </h6>
+            <h6>
+                <a [attr.aria-label]="'How to change the size of your slides' | language" href="https://squiglit.com/how-to-change-the-size-of-your-slides/"
+                    target="_blank" class="md-truscribe-theme">
+                    {{'How to change the size of your slides' | language}}
+                </a>?
+            </h6>
+        </div>
+    </div>
+</div>

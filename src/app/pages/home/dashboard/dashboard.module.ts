@@ -18,7 +18,8 @@ import { TimeLineComponent } from './time-line/time-line.component';
 
 @NgModule({
   declarations: [
-    DashboardComponent, PowerpointComponent, ProjectComponent, ScriptRecordComponent, VoiceSelectComponent, VoiceOptionsComponent, ProjectFinalizeComponent, TimeLineComponent],
+    DashboardComponent,
+     PowerpointComponent, ProjectComponent, ScriptRecordComponent, VoiceSelectComponent, VoiceOptionsComponent, ProjectFinalizeComponent, TimeLineComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

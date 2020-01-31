@@ -1,1 +1,25 @@
-<p>uploader works!</p>
+<div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="onFileSelected($event)">
+    text
+    <i style="font-size: 20px" class="fas fa-upload"></i>
+    <input hidden type="file" #fileInput (change)="onFileSelected($event.target.files)">
+</div>
+<div class="files-list" *ngFor="let file of files;let i=index">
+    <div class="row">
+        <div class="col-2">
+            <button mat-icon-button (click)="deleteAttachment(i)">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+        <div class="col-10">
+            {{file.name}}
+            <button *ngIf="file.ready" matTooltip="آپلود موفق" class="success-upload" mat-icon-button><i class="fa fa-check"></i></button>
+            <button *ngIf="file.ready == false" matTooltip="خطا در آپلود!" class="un-success-upload" mat-icon-button
+                (click)="upload(file)"><i class="fal fa-repeat"></i></button>
+        </div>
+    </div>
+    <mat-progress-bar color="warn" [value]="file.progress"></mat-progress-bar>
+</div>
+
+<div class="message-box" *ngIf="files.length > 0">
+    {{resultMessage}}
+</div>

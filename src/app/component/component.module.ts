@@ -11,6 +11,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ListComponent } from './list/list.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { PipeModule } from '../pipe/pipe.module';
+import { DirectiveModule } from '../directive/directive.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { PipeModule } from '../pipe/pipe.module';
   imports: [
     CommonModule,
     ShareModule,
-    PipeModule
+    PipeModule,
+    DirectiveModule
   ],
   exports: [
     SliderComponent,

@@ -1,15 +1,74 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit, Input} from '@angular/core';
+import {HttpEventType} from '@angular/common/http';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
-  selector: 'app-uploader',
-  templateUrl: './uploader.component.html',
-  styleUrls: ['./uploader.component.scss']
+    selector: 'app-uploader',
+    templateUrl: './uploader.component.html',
+    styleUrls: ['./uploader.component.scss']
 })
 export class UploaderComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+    files = [];
+
+    directory = '';
+
+    resultMessage = '';
+
+    @Input() type: string;
+
+    constructor(private apiService: ApiService) {
+    }
+
+    ngOnInit() {
+    }
+
+    onFileSelected(files) {
+        for (let i = 0; i < files.length; i++) {
+            this.files.push(files[i]);
+        }
+    }
+
+
+    deleteAttachment(index) {
+        this.files.splice(index, 1);
+    }
+
+    uploadFiles() {
+        for (const fileKey in this.files) {
+            this.upload(this.files[fileKey]);
+        }
+    }
+
+
+    upload(file) {
+        this.resultMessage = '';
+        const formData = new FormData();
+        formData.append('file', file);
+        // this.apiService.('admin/upload?directory=' + this.directory + '/', formData, {
+        //     reportProgress: true,
+        //     observe: 'events'
+        // }).subscribe(
+        //     (evt: any) => {
+        //         if (evt.type == HttpEventType.UploadProgress) {
+        //             file.progress = Math.round(evt.loaded / evt.total * 100);
+        //         } else if (evt.type == HttpEventType.Response) {
+        //             file.ready = true;
+        //         }
+        //     }, () => {
+        //         file.ready = false;
+        //         file.progress = 0;
+        //     }
+        // );
+    }
+
+    uploadFile(event) {
+        for (let index = 0; index < event.length; index++) {
+            const element = event[index];
+            this.files.push(element.name);
+        }
+    }
 
 }
