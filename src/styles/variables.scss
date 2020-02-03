@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+
+// theme colors
+$primary: mat-palette($mat-indigo, A200);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+$warn:    mat-palette($mat-pink);
+
+// base colors
+$dark: mat-palette($mat-grey);
+
+$white: #fff;
+
+
+// layout 
+$radius-with: 5px;

@@ -1,9 +1,9 @@
-.box-content, .main-box-content{
-    padding: 10px;
-  }
+.tool-btn-container{
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+}
 
-  .tool-btn-container{
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-  }
+.box-content, .main-box-content{
+  padding: 10px;
+}

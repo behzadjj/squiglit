@@ -1,36 +1,36 @@
 <!-- <div [class]="currentTheme"> -->
 
-<mat-toolbar color="primary" class="header" id="header">
+<mat-toolbar class="header" id="header">
   <span>
-    <a class="brand md-truscribe-theme" ui-sref="home" ng-class="{'arabic-style' : vm.languageDirection=='right'}"
-       href="#/home">
-			<img src="../../../assets/image/squigl_appicon.png" aria-label="Squigl">
-		</a>
+
+
+    <div class="left-header">
+      <button mat-stroked-button class="toggle-menu-btn" (click)="drawerMoreInfo = !drawerMoreInfo">
+        <i class="fa fa-map"></i>
+      </button>
+      <a class="brand" ui-sref="home" ng-class="{'arabic-style' : vm.languageDirection=='right'}" href="#/home">
+        <img src="../../../assets/image/squigl_appicon.png" aria-label="Squigl">
+      </a>
+    </div>
   </span>
 
-  <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-
-  <!--<button mat-icon-button routerLink="/">-->
-  <!--<i class="fa fa-home large"></i>-->
-
-
-  <!--</button>-->
   <span>
-  <div class="profile-container" ng-class="{'arabic-style' : vm.languageDirection=='right'}">
-			<a class="profile-logo md-truscribe-theme active" ng-class="{'arabic-style' : vm.languageDirection=='right'}"
-         ui-sref="account" ui-sref-active="active" href="#/account">
-				<img aria-label="Profile image" src="../../../assets/image/Squigl-app-icons-profile.png"
-             ng-class="{'arabic-style' : vm.languageDirection=='right'}">
-			</a>
-			<div class="profile-logo" ng-class="{'arabic-style' : vm.languageDirection=='right'}">
-				<a aria-label="This is abe@abe.com" class="profile-username ng-binding md-truscribe-theme active"
-           ui-sref="account" ui-sref-active="active" href="#/account">
-					abe@abe.com
-				</a>
-			</div>
-		</div>
+    <div class="profile-container" ng-class="{'arabic-style' : vm.languageDirection=='right'}">
+
+      <a class="profile-logo md-truscribe-theme active" ng-class="{'arabic-style' : vm.languageDirection=='right'}"
+        ui-sref="account" ui-sref-active="active" href="#/account">
+        <img aria-label="Profile image" src="../../../assets/image/Squigl-app-icons-profile.png" ng-class="{'arabic-style' : vm.languageDirection=='right'}">
+      </a>
+      <div class="profile-logo" ng-class="{'arabic-style' : vm.languageDirection=='right'}">
+        <a aria-label="This is abe@abe.com" class="profile-username ng-binding md-truscribe-theme active" ui-sref="account"
+          ui-sref-active="active" href="#/account">
+          abe@abe.com
+        </a>
+
+      </div>
+    </div>
   </span>
 </mat-toolbar>
 
@@ -53,7 +53,7 @@
           <i [class]="'fa large ' + (drawerMoreInfo ? 'fa-chevron-left' : 'fa-chevron-right')"></i>
         </div>
         <div *ngIf="drawerMoreInfo" class="menu-text">
-          
+
 
         </div>
         <mat-divider></mat-divider>
@@ -63,9 +63,9 @@
 
   <mat-sidenav-content>
     <div class="app-sidenav-content">
-      <mat-toolbar color="primary" class="toolbar">
+      <!-- <mat-toolbar class="toolbar">
         aaa
-      </mat-toolbar>
+      </mat-toolbar> -->
       <div id="main-box-container">
         <router-outlet></router-outlet>
       </div>

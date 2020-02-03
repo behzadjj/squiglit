@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./layout.scss";
 @import "./../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 
 div .mat-form-field-appearance-fill .mat-form-field-flex{
@@ -59,26 +58,6 @@ div .ltr-input {
     justify-content: center;
     align-items: center;
 }
-
-/* width */
-::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
 
 
   

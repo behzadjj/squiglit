@@ -1,3 +1,41 @@
+@import "../../../styles/variables.scss";
+@import '~@angular/material/theming';
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .app-sidenav{
+    display: none;
+  }
+  .app-container{
+    top: 56px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .toggle-menu-btn{
+    display: none;
+  }
+  .app-container{
+    top: 64px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
+
+
+
 mat-toolbar {
   .example-fill-remaining-space {
     /* This fills the remaining space, by using flexbox.
@@ -6,7 +44,7 @@ mat-toolbar {
   }
 
 
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 3px 0px mat-color($dark, 400);
 
   &.header{
     position: fixed;
@@ -23,7 +61,6 @@ mat-toolbar {
   width: 100%;
   position: fixed;
   left: 0;
-  top: 64px;
   bottom: 0;
 
 
@@ -36,14 +73,15 @@ mat-toolbar {
 
 
     #main-box-container{
-      padding: 15px;
+      padding: 10px 30px;
+      background-color:  mat-color($dark, 200);
     }
     height: 40px;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
   }
 
   .app-sidenav{
-    background-color: #343a40;
+    background-color: mat-color($dark, 800);
     div{
       color: #88aff7;
       i{
@@ -62,21 +100,26 @@ mat-toolbar {
 
 #header{
 
-  .brand {
-    height: 50px;
+  .left-header{
+    
     display: inline-block;
     position: absolute;
-    left: -50px;
     cursor: pointer;
     padding: 5px 10px;
     margin-left: 50px;
+    left: -50px;
     top: 0;
 
-    &>img {
-      width: auto;
-      height: 40px;
+    .brand {
+      height: 50px;
+  
+      &>img {
+        width: auto;
+        height: 40px;
+      }
     }
   }
+  
 
   .profile-container {
     position: absolute;

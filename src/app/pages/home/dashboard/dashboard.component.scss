@@ -1,3 +1,6 @@
+@import "../../../../styles/variables.scss";
+@import '~@angular/material/theming';
+
 .slider-container{
     margin: 30px auto 60px;
 
@@ -34,6 +37,19 @@
     }
 }
 
-.search-video-container{
-    margin: 20px auto 20px;
+#search-video-container{
+    background-color: $white;
+    border-radius: $radius-with;
+    margin: 2rem 0;
+    padding: .2rem 1rem;
+    align-items: center;
+}
+
+.main-container{
+    background: url(../../../../assets/image/background-image.png);
+    background-attachment: fixed;
+    background-size: 700px 700px;
+    background-position: center;
+    width: 100%;
+    background-repeat: no-repeat;
 }
