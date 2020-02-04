@@ -19,38 +19,53 @@
         </button>
     </div>
 
-    <div class="row" id="search-video-container">
+    <!-- <div class="row" id="search-video-container">
         <div id="search-label " class="col-1">
-                {{'VIDEOS' | language}}
+            {{'VIDEOS' | language}}
         </div>
         <div id="search-component " class="col-11">
+            <app-search-video></app-search-video>
+        </div>
+    </div> -->
+
+    <div class="slider-container">
+        <div class="slider-header">{{'VIDEOS' | language}}</div>
+        <div class="slider-component" id="search-component">
             <app-search-video></app-search-video>
         </div>
     </div>
 
     <div class="slider-container">
         <div class="slider-header">{{ 'FINALIZED VIDEOS' | language}}</div>
-        <app-slider [data]="powerPoints"></app-slider>
+        <div class="slider-component">
+            <app-slider [data]="powerPoints"></app-slider>
+        </div>
     </div>
 
 
     <div class="slider-container">
         <div class="slider-header">{{'DRAFT VIDEOS' | language}}</div>
-        <app-slider [data]="powerPoints"></app-slider>
+        <div class="slider-component">
+            <app-slider [data]="powerPoints"></app-slider>
+        </div>
     </div>
 
 
 
     <div class="slider-container">
         <div class="slider-header">{{'PUBLISHED VIDEOS' | language}}</div>
-        <app-slider [data]="powerPoints"></app-slider>
+        <div class="slider-component">
+            <app-slider [data]="powerPoints"></app-slider>
+        </div>
     </div>
 
 
 
     <div class="slider-container">
         <div class="slider-header">{{'POWER POINT VIDEOS' | language}}</div>
-        <app-slider [data]="powerPoints"></app-slider>
+        <div class="slider-component">
+            <app-slider [data]="powerPoints"></app-slider>
+        </div>
     </div>
 
     <button (click)="changeLang()">change language</button>

@@ -41,10 +41,10 @@ export class SliderComponent implements OnInit, OnChanges {
         console.log('refreshNeed');
         // this.addItems(element);
       } else {
-        element.scroll(300 + element.scrollLeft, 0);
+        element.scroll(310 + element.scrollLeft, 0);
       }
     } else {
-      element.scroll(element.scrollLeft - 300, 0);
+      element.scroll(element.scrollLeft - 310, 0);
     }
 
   }
